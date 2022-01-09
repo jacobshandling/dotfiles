@@ -44,6 +44,11 @@ set backspace=indent,eol,start
 " for more information on this.
 set hidden
 
+" tabs
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 " This setting makes search case-insensitive when all characters in the string
 " being searched are lowercase. However, the search becomes case-sensitive if
 " it contains any capital letters. This makes searching more convenient.
@@ -66,6 +71,22 @@ packadd! matchit
 " sometimes be convenient.
 set mouse+=a
 
+" Keybindings to move lines using alt+<j/k>
+
+" Move line up/down
+" From: https://www.reddit.com/r/vim/comments/na7qmm/comment/gxseh00/?utm_source=share&utm_medium=web2x&context=3
+nnoremap <silent> <C-k>    :<C-U>exec "exec 'norm m`' \| move -" . (1+v:count1)<CR>``
+nnoremap <silent> <C-j>  :<C-U>exec "exec 'norm m`' \| move +" . (0+v:count1)<CR>``
+
+inoremap <silent> <C-k>    <C-O>m`<C-O>:move -2<CR><C-O>``
+inoremap <silent> <C-j>  <C-O>m`<C-O>:move +1<CR><C-O>``
+
+vnoremap <silent> <C-k>    :<C-U>exec "'<,'>move '<-" . (1+v:count1)<CR>gv
+vnoremap <silent> <C-j>  :<C-U>exec "'<,'>move '>+" . (0+v:count1)<CR>gv
+
+" Quickly insert an empty new line without entering insert mode
+nnoremap <Leader>o o<Esc>0"_D
+nnoremap <Leader>O O<Esc>0"_D
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
 " for movement, rather than using more efficient movement commands, is also a
