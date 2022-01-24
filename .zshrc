@@ -3,7 +3,10 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-source .dotfiles/.private/.credentials
+# source all local, private files
+for file in $HOME/.dotfiles/.private/.*; do
+    source "$file"
+done
 
 
 # Set name of the theme to load --- if set to "random", it will
