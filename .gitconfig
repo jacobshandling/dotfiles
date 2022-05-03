@@ -5,3 +5,5 @@
 [user]
 	name = Jacob Shandling
 	email = jacobshandling@pm.me
+[pull]
+	rebase = false
