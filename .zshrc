@@ -3,6 +3,16 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# for apps under development to know where they are
+export WHEREAMI="dev"
+
+# soundseeker
+export SS_ENV="$HOME/.envs/soundseeker_env"
+
+# fleet
+export FLEET_ENV_PATH="$HOME/.envs/fleet_env/env"
+export WORKSPACE_FLEET="/Users/jake_21/dev/fleet/dev/fleet.code-workspace"
+
 # source all local, private files
 for file in $HOME/.dotfiles/.private/.*; do
     source "$file"

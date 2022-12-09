@@ -20,6 +20,9 @@ set shortmess+=I
 " Show line numbers.
 set number
 
+" Avoid issues with webpack watching on save
+set backupcopy=yes
+
 " This enables relative line numbering mode. With both number and
 " relativenumber enabled, the current line shows the true line number, while
 " all other lines (above and below) are numbered relative to the current line.
